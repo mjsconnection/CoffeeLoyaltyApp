@@ -26,6 +26,17 @@ class LoginViewController: UIViewController {
     }
     
 
+    @IBAction func LoginButton(sender: AnyObject) {
+        if(yourName.text.isEmpty == true || password.text.isEmpty == true){
+        var alert = UIAlertView(title: "Error!", message: "Username or Password field is empty!", delegate: nil, cancelButtonTitle: "Okay")
+            alert.show()
+        }
+        else{
+        var VC=storyboard?.instantiateViewControllerWithIdentifier("OrderViewController") as! OrderViewController
+            VC.greet = yourName.text
+                }
+    }
+    
     func loginPressed() {
         println("\(yourName.text)")
         println("\(password.text)")

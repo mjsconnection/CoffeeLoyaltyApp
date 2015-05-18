@@ -7,7 +7,7 @@
         <!--Item 2-->
         <scene sceneID="Zc5-0x-g2Z">
             <objects>
-                <viewController id="Lgz-BO-b71" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OrderViewController" id="Lgz-BO-b71" customClass="OrderViewController" customModule="CoffeeLoyaltyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LOM-gO-sNV"/>
                         <viewControllerLayoutGuide type="bottom" id="E8A-Zs-0VC"/>
@@ -16,15 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLx-86-ERH">
-                                <rect key="frame" x="149" y="59" width="171" height="98"/>
-                                <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="24"/>
-                                <state key="normal" title="Not Joe? Who are you?">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello Joe!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2c-bV-rzK">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2c-bV-rzK">
                                 <rect key="frame" x="172" y="41" width="169" height="57"/>
                                 <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="42"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -42,10 +34,24 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLx-86-ERH">
+                                <rect key="frame" x="149" y="59" width="171" height="98"/>
+                                <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="24"/>
+                                <state key="normal" title="Not you?">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="9Bd-4z-YGJ" kind="show" id="R5B-xI-peb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.80977746210000001" green="0.65199509339999995" blue="0.3893350163" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="uM2-ZE-Djm"/>
+                    <connections>
+                        <outlet property="Greeting" destination="o2c-bV-rzK" id="peL-W5-TEQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4uc-8h-fF7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -72,7 +78,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ga-HM-VSC">
-                                <rect key="frame" x="93" y="362" width="126" height="30"/>
+                                <rect key="frame" x="95" y="362" width="126" height="30"/>
                                 <state key="normal" title="Forgot Password?">
                                     <color key="titleColor" red="0.60000002384185791" green="0.40000000596046448" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -81,17 +87,20 @@
                                     <segue destination="zeC-21-wR5" kind="presentation" modalTransitionStyle="coverVertical" id="V5F-E9-q0h"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MME-xD-kv9">
-                                <rect key="frame" x="138" y="410" width="38" height="30"/>
-                                <state key="normal" title="Login">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k54-hi-8rK">
                                 <rect key="frame" x="80" y="319" width="156" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MME-xD-kv9">
+                                <rect key="frame" x="139" y="410" width="38" height="30"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="LoginButton:" destination="9Bd-4z-YGJ" eventType="touchUpInside" id="cKM-Tc-BJe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.83921568627450982" green="0.73333333333333328" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -166,4 +175,7 @@
     <resources>
         <image name="Coffee" width="387" height="343"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="R5B-xI-peb"/>
+    </inferredMetricsTieBreakers>
 </document>
